@@ -95,13 +95,27 @@ namespace Gestion_de_produits
                 // Si TOUS les critères correspondent
                 if (correspondReference && correspondNom && correspondPrix && correspondFrais)
                 {
-                    // Ajouter le produit aux résultats
-                    Dgv_Resultats.Rows.Add(
-                        p.Reference,
-                        p.NomProduit,
-                        p.PrixUnitaire,
-                        p.QuantiteStock
-                    );
+                    // MODIFICATION : Afficher la date pour les produits frais
+                    if (p is ProduitFrais produitFrais)
+                    {
+                        Dgv_Resultats.Rows.Add(
+                            p.Reference,
+                            p.NomProduit,
+                            p.PrixUnitaire,
+                            p.QuantiteStock,
+                            produitFrais.DateLimite.ToString("dd/MM/yyyy")
+                        );
+                    }
+                    else
+                    {
+                        Dgv_Resultats.Rows.Add(
+                            p.Reference,
+                            p.NomProduit,
+                            p.PrixUnitaire,
+                            p.QuantiteStock,
+                            ""
+                        );
+                    }
                     compteur++;
                 }
             }

@@ -39,11 +39,12 @@
             this.Txt_PrixMin = new System.Windows.Forms.TextBox();
             this.Txt_PrixMax = new System.Windows.Forms.TextBox();
             this.Dgv_Resultats = new System.Windows.Forms.DataGridView();
+            this.checkFRAIS = new System.Windows.Forms.CheckBox();
             this.Col_Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_NomProduit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_PrixUnitaire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_QuantiteStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkFRAIS = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Resultats)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,6 +136,7 @@
             this.Dgv_Resultats.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dgv_Resultats.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_Reference,
+            this.Col_Date,
             this.Col_NomProduit,
             this.Col_PrixUnitaire,
             this.Col_QuantiteStock});
@@ -145,12 +147,30 @@
             this.Dgv_Resultats.Size = new System.Drawing.Size(949, 182);
             this.Dgv_Resultats.TabIndex = 10;
             // 
+            // checkFRAIS
+            // 
+            this.checkFRAIS.AutoSize = true;
+            this.checkFRAIS.Location = new System.Drawing.Point(73, 21);
+            this.checkFRAIS.Name = "checkFRAIS";
+            this.checkFRAIS.Size = new System.Drawing.Size(102, 20);
+            this.checkFRAIS.TabIndex = 11;
+            this.checkFRAIS.Text = "Produit frais ";
+            this.checkFRAIS.UseVisualStyleBackColor = true;
+            this.checkFRAIS.CheckedChanged += new System.EventHandler(this.checkFRAIS_CheckedChanged);
+            // 
             // Col_Reference
             // 
             this.Col_Reference.HeaderText = "Reference";
             this.Col_Reference.MinimumWidth = 6;
             this.Col_Reference.Name = "Col_Reference";
             this.Col_Reference.Width = 125;
+            // 
+            // Col_Date
+            // 
+            this.Col_Date.HeaderText = "Date d\'expiration ";
+            this.Col_Date.MinimumWidth = 6;
+            this.Col_Date.Name = "Col_Date";
+            this.Col_Date.Width = 125;
             // 
             // Col_NomProduit
             // 
@@ -172,17 +192,6 @@
             this.Col_QuantiteStock.MinimumWidth = 6;
             this.Col_QuantiteStock.Name = "Col_QuantiteStock";
             this.Col_QuantiteStock.Width = 125;
-            // 
-            // checkFRAIS
-            // 
-            this.checkFRAIS.AutoSize = true;
-            this.checkFRAIS.Location = new System.Drawing.Point(73, 21);
-            this.checkFRAIS.Name = "checkFRAIS";
-            this.checkFRAIS.Size = new System.Drawing.Size(102, 20);
-            this.checkFRAIS.TabIndex = 11;
-            this.checkFRAIS.Text = "Produit frais ";
-            this.checkFRAIS.UseVisualStyleBackColor = true;
-            this.checkFRAIS.CheckedChanged += new System.EventHandler(this.checkFRAIS_CheckedChanged);
             // 
             // Frm_Recherche
             // 
@@ -223,10 +232,11 @@
         private System.Windows.Forms.TextBox Txt_PrixMin;
         private System.Windows.Forms.TextBox Txt_PrixMax;
         private System.Windows.Forms.DataGridView Dgv_Resultats;
+        private System.Windows.Forms.CheckBox checkFRAIS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Reference;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_NomProduit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_PrixUnitaire;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_QuantiteStock;
-        private System.Windows.Forms.CheckBox checkFRAIS;
     }
 }
