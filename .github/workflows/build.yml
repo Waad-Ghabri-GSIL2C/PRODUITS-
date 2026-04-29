@@ -1,0 +1,5 @@
+name: Build Simple
+
+on:
+  push:
+    branches: [ "main" ]
